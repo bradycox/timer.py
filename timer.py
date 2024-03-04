@@ -25,7 +25,7 @@ Examples:
 To install required external packages, use:
 pip install python-dateutil pyfiglet
 
-Note: Intended for Unix-like systems where the curses library is available.
+Note: Designed for Linux :heart:
 
 Author: Brady Cox (brady@beard.sh)
 """
