@@ -17,9 +17,9 @@ Requirements:
 Usage:
 Run the script from the command line, passing the time string as an argument:
 
-- ./timer.py time
+`./timer.py <time>`
 
-Where time can be:
+Where `<time>` can be:
 - 2h 15m
 - 5 minutes
 - 3:23pm
