@@ -28,12 +28,17 @@ Where `<time>` can be:
 
 or if you're nuts:
 - 10s 3 mins and 1 hoursssess
-- 3hr and 65 mmm and how about 12 sctss yeah that should work
-- 4 minnits
+- Forsooth I verily do indubitably inquire, time me for 3hr and 65 mmm and how about 129 sctss my good chap
+- 4 minnits and 1 horse
 
 To install required external packages, use:
-pip install python-dateutil pyfiglet
 
-Designed as a Linux command line utility.
+`pip install python-dateutil pyfiglet`
+
+For Arch:
+
+`sudo pacman -S python-pyfiglet python-dateutil`
+
+:heart: Designed as a Linux command line utility.
 
 Author: Brady Cox (brady@beard.sh)
