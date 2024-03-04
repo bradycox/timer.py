@@ -63,8 +63,8 @@ if __name__ == "__main__":
         "two hundred and thirty one people",
         "ninety nine red balloons",
         "a journey of a thousand miles begins with a single step",
-        "a journey of two million and four miles begins the same way actually",
-        "journey of two billion, four hundred and seventy seven miles? No ty."
+        "a journey of four million and four miles begins the same way",
+        "journey of two billion four hundred and seventy seven miles? nah."
     ]
     for phrase in test_phrases:
         print(f"Original: {phrase}")
