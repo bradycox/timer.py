@@ -15,8 +15,9 @@ Requirements:
 - curses: Standard library module used for creating the terminal display.
 
 Usage:
-Run the script from the command line, passing the time string as an argument
-./timer.py <time>
+Run the script from the command line, passing the time string as an argument:
+
+- ./timer.py <time>
 
 Where <time> can be:
 - 2h 15m
