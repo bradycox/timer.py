@@ -37,11 +37,11 @@ Where `<time>` can be:
 
 or if you're nuts:
 - 10s 3 mins and 1 hoursssess
-- Forsooth I verily do indubitably inquire, time me for 3hr and 65 mmm and how about 129 sctss my good chap
+- Forsooth I verily do indubitably inquire, time me for three hr and 75 mmminoiuts and how about 300 secktandss my good chap
 - 4 minnits and 1 horse
 - twenty horses and fifteen mice
 
-Maximum allowable timer length is: 69,914,649 hours (the datetime python library can't calculate higher dates than this.)
+Maximum allowable timer length at the time of writing is **69,914,649 hours** (python won't let me go later than 01 Jan 10000)
 
 If you need a longer timer than ~7,975 years, consider immortality.
 
