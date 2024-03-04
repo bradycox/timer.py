@@ -14,6 +14,14 @@ Requirements:
 - pyfiglet: For generating ASCII art text for the countdown display.
 - curses: Standard library module used for creating the terminal display.
 
+To install required external packages, use:
+
+`pip install python-dateutil pyfiglet`
+
+For Arch:
+
+`sudo pacman -S python-pyfiglet python-dateutil`
+
 Usage:
 Run the script from the command line, passing the time string as an argument:
 
@@ -33,16 +41,9 @@ or if you're nuts:
 - 4 minnits and 1 horse
 - twenty horses and fifteen mice
 
-Maximum allowable timer length is: 69,914,649 hours
-This is because the datetime python library can't calculate higher dates than this.
+Maximum allowable timer length is: 69,914,649 hours (the datetime python library can't calculate higher dates than this.)
 
-To install required external packages, use:
-
-`pip install python-dateutil pyfiglet`
-
-For Arch:
-
-`sudo pacman -S python-pyfiglet python-dateutil`
+If you need a longer timer than ~7,975 years, consider immortality.
 
 :heart: Designed as a Linux command line utility.
 
