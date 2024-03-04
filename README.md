@@ -18,7 +18,8 @@ Usage:
 Run the script from the command line, passing the time string as an argument
 Examples:
 - ./timer.py "5 minutes"
-- ./timer.py "2h 15m"
+- ./timer.py "five minutes"
+- ./timer.py "2h 15m 11s"
 - ./timer.py "3:23pm"
 
 To install required external packages, use:

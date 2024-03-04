@@ -31,7 +31,7 @@ Author: Brady Cox (brady@beard.sh)
 """
 
 __author__ = "Brady Cox"
-__version__ = "1.0"
+__version__ = "1.2"
 __license__ = "MIT"
 
 import time
@@ -41,6 +41,7 @@ from datetime import datetime, timedelta
 import curses
 import pyfiglet
 from dateutil.parser import parse as parse_date
+from converters import word_to_num
 
 # Set the pyfiglet font
 PYFIGFONT = 'dos_rebel'
@@ -137,6 +138,7 @@ def countdown(stdscr, target_time):
                 break
     finally:
         curses.curs_set(1)  # Ensure the cursor is visible again when exiting
+        print("\nTime is up!")
 
 
 if __name__ == "__main__":
@@ -146,7 +148,7 @@ if __name__ == "__main__":
             sys.exit(1)
 
         input_time = " ".join(sys.argv[1:])
-        target_time = parse_time(input_time)
+        target_time = parse_time(word_to_num(input_time))
         curses.wrapper(countdown, target_time)
     except KeyboardInterrupt:
-        print("\nDone early, OK!")
+        print("\nDone early? OK!")
