@@ -33,6 +33,9 @@ or if you're nuts:
 - 4 minnits and 1 horse
 - twenty horses and fifteen mice
 
+Maximum allowable timer length is: 69,914,649 hours
+This is because the datetime python library can't calculate higher dates than this.
+
 To install required external packages, use:
 
 `pip install python-dateutil pyfiglet`
