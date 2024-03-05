@@ -37,13 +37,19 @@ Where `<time>` can be:
 
 or if you're nuts:
 - 10s 3 mins and 1 hoursssess
-- Forsooth I verily do indubitably inquire, time me for three hr and 75 mmminoiuts and how about 300 secktandss my good chap
 - 4 minnits and 1 horse
 - twenty horses and fifteen mice
+- Forsooth I verily do indubitably inquire, time me for three hr and 75 mmminoiuts and how about 300 secktandss my good chap
 
-Maximum allowable timer length at the time of writing is **69,914,649 hours** (python won't let me go later than 01 Jan 10000)
+Maximum allowable timer length at the time of writing is **69,914,649 hours** (dateutil by default won't let me create a datetime object later than 01 Jan 10000 - 1 second)
 
 If you need a longer timer than ~7,975 years, consider immortality.
+
+Once mortality is no longer an issue, modify python's dateutil library so the MAXYEAR constant is larger than 9999. Adding a "9" to the end will grant you about 90 thousand extra years. Take your time.
+
+You're now only limited by the size of an integer, so the timer can last up to 2,147,483,647 years on 32 bit machines, or 9,223,372,036,854,775,807 years on a 64 bit machine. (Assumes technology from ~8000 years ago is still being used in the year 9999 and is still limited to 32 and 64 bits). 
+
+Note: Earth's sun could form anew, and fade to a red dwarf **922,337,203.7 times** before a 64 bit timer expires. So.. I haven't tested it yet.
 
 :heart: Designed as a Linux command line utility.
 
