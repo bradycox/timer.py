@@ -31,7 +31,7 @@ Author: Brady Cox (brady@beard.sh)
 """
 
 __author__ = "Brady Cox"
-__version__ = "1.2"
+__version__ = "1.1"
 __license__ = "MIT"
 
 import time
