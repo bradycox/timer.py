@@ -47,7 +47,7 @@ If you need a longer timer than ~7,975 years, consider immortality.
 
 Once mortality is no longer an issue, modify python's dateutil library so the MAXYEAR constant is larger than 9999. Adding a "9" to the end will grant you about 90 thousand extra years. Take your time.
 
-You're now only limited by the size of an integer, so the timer can last up to 2,147,483,647 years on 32 bit machines, or 9,223,372,036,854,775,807 years on a 64 bit machine. (Assumes technology from ~8000 years ago is still being used in the year 9999 and is still limited to 32 and 64 bits). 
+You're now only limited by the size of an integer, so the timer can last 9,223,372,036,854,775,807 years on a 64 bit machine. (Assumes technology from ~8000 years ago is still being used in the year 9999 and is still limited 64 bits). 
 
 Note: Earth's sun could form anew, and fade to a red dwarf **922,337,203.7 times** before a 64 bit timer expires. So.. I haven't tested it yet.
 
