@@ -58,6 +58,7 @@ def parse_absolute_time(input_time):
 def parse_relative_time(input_time):
     """
     Parse a relative time input and return the total duration in seconds.
+    Raises ValueError if no time units are found.
     """
     total_seconds = 0
     # Updated regex to include different abbreviations and plural forms
@@ -68,6 +69,8 @@ def parse_relative_time(input_time):
     )
 
     matches = pattern.findall(input_time)
+    if not matches:
+        raise ValueError(f"No time units found in: {input_time!r}")
     for amount, unit in matches:
         amount = int(amount)
         if unit.startswith(('h', 'hour', 'hr')):
@@ -84,17 +87,20 @@ def parse_time(input_time):
     """Determine if input is absolute or relative and parse accordingly."""
     if ":" in input_time:
         return parse_absolute_time(input_time)
-    else:
+    try:
         return parse_relative_time(input_time)
+    except ValueError:
+        return parse_absolute_time(input_time)
 
 
 def display_large_text(stdscr, text):
     """Use pyfiglet to display large text and center it in the window."""
     height, width = stdscr.getmaxyx()
     ascii_art = pyfiglet.figlet_format(text, font=PYFIGFONT)
-    for i, line in enumerate(ascii_art.split("\n")):
+    lines = ascii_art.split("\n")
+    for i, line in enumerate(lines):
         x = max(0, width // 2 - len(line) // 2)
-        y = height // 2 - len(ascii_art.split("\n")) // 2 + i
+        y = height // 2 - len(lines) // 2 + i
         try:
             stdscr.addstr(y, x, line)
         except curses.error:
@@ -113,18 +119,24 @@ def countdown(stdscr, target_time):
     else:
         end_time = target_time
 
+    finished = False
     try:
         while True:
             now = datetime.now()
             if now >= end_time:
+                finished = True
                 break  # Stop the loop when the countdown is finished
 
             remaining = end_time - now
-            hours, remainder = divmod(int(remaining.total_seconds()), 3600)
+            total_remaining = int(remaining.total_seconds())
+            hours, remainder = divmod(total_remaining, 3600)
             minutes, seconds = divmod(remainder, 60)
 
-            # Format the remaining time
-            time_str = f"{hours:02}:{minutes:02}:{seconds:02}"
+            # Format the remaining time, omitting hours when zero
+            if hours:
+                time_str = f"{hours:02}:{minutes:02}:{seconds:02}"
+            else:
+                time_str = f"{minutes:02}:{seconds:02}"
 
             stdscr.erase()  # Erase the window content
             display_large_text(stdscr, time_str)
@@ -138,7 +150,8 @@ def countdown(stdscr, target_time):
                 break
     finally:
         curses.curs_set(1)  # Ensure the cursor is visible again when exiting
-        print("\nTime is up!")
+        if finished:
+            print("\nTime is up!")
 
 
 if __name__ == "__main__":
